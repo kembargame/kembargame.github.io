@@ -1,0 +1,48 @@
+@import url('https://unpkg.com/open-props/normalize.min.css');
+@import url('https://unpkg.com/open-props/open-props.min.css');
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.loader {
+  display: flex;
+  gap: var(--size-2);
+}
+
+.loader span {
+  --speed: 0.65;
+  --count: 6;
+  --animation-delay: calc(sin((var(--index) / var(--count)) * 45deg) * var(--speed) * -1s);
+  height: 10vmin;
+  aspect-ratio: 1;
+  background: var(--red-2);
+  border-radius: 50%;
+  animation: jump calc(var(--speed) * 1s) var(--delay) infinite ease-in-out;
+}
+
+@keyframes jump {
+  50% {
+    translate: 0 -100%;
+  }
+}
+
+span:nth-of-type(1) {
+  background: var(--yellow-5);
+}
+span:nth-of-type(2) {
+  background: var(--orange-5);
+}
+span:nth-of-type(3) {
+  background: var(--red-5);
+}
+span:nth-of-type(4) {
+  background: var(--purple-5);
+}
+span:nth-of-type(5) {
+  background: var(--indigo-5);
+}
+span:nth-of-type(6) {
+  background: var(--green-5);
+}
